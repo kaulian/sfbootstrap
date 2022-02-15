@@ -389,7 +389,7 @@ sfb_hook_exec() {
 }
 sfb_manual_hybris_patches_applied() {
 	local i script patch_cmd applied_check_cmd
-	for i in $(seq 0 2 $((${#HYBRIS_PATCHER_SCRIPTS[@]}-1))); do
+	for i in $(seq 0 2 $((${#HYBRIS_PATCHER_SCRIPTS[@]}))); do
 		patch_cmd="${HYBRIS_PATCHER_SCRIPTS[$i]}"
 		script="${patch_cmd%% *}" # drop args
 		if [ ! -e "$ANDROID_ROOT/$script" ]; then
